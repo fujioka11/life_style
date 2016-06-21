@@ -1,0 +1,6 @@
+export
+wp --path=/var/www/media db export /vagrant/import.sql
+
+import
+
+wp --path=/var/www/media db import /vagrant/import.sql

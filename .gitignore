@@ -10,3 +10,15 @@ provision-pre.sh
 site.yml
 vendor
 www
+/var/www/vhosts/i-70b33683.htaccess
+/var/www/vhosts/i-70b33683sitemap.xml
+/var/www/vhosts/i-70b33683sitemap.xml.gz
+/var/www/vhosts/i-70b33683wp-config.php
+/var/www/vhosts/i-70b33683wp-content/advanced-cache.php
+/var/www/vhosts/i-70b33683wp-content/backup-db/
+/var/www/vhosts/i-70b33683wp-content/backups/
+/var/www/vhosts/i-70b33683wp-content/blogs.dir/
+/var/www/vhosts/i-70b33683wp-content/cache/
+/var/www/vhosts/i-70b33683wp-content/upgrade/
+/var/www/vhosts/i-70b33683wp-content/uploads/
+/var/www/vhosts/i-70b33683wp-content/wp-cache-config.php
