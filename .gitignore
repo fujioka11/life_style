@@ -22,3 +22,4 @@ www
 /var/www/vhosts/i-70b33683wp-content/upgrade/
 /var/www/vhosts/i-70b33683wp-content/uploads/
 /var/www/vhosts/i-70b33683wp-content/wp-cache-config.php
+node_modules

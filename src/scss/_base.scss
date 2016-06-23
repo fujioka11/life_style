@@ -1,0 +1,101 @@
+/* normalize.cssを補うCSS
+-----------------------------------*/
+html {
+  font-size:62.5%;
+}
+
+a {
+  outline:none;
+}
+
+select::-ms-expand {
+  display: none;
+}
+
+h1,h2,h3,h4,h5,h6,p,dl,dt,dd,ol,ul,li {
+  margin:0;
+  padding:0;
+}
+
+img {
+  -ms-interpolation-mode: bicubic;
+}
+
+body {
+  font-family: Meiryo, メイリオ,'Hiragino Kaku Gothic ProN', 'ヒラギノ角ゴ ProN W3', Osaka, 'MS PGothic', arial, helvetica, sans-serif;
+  // font-family: proxima-nova-soft,Apple TP,Helvetica Neue,Helvetica,Hiragino Kaku Gothic Pro,ヒラギノ角ゴ Pro W3,メイリオ,Meiryo,ＭＳ\ Ｐゴシック,Arial,Verdana,"sans-serif";
+  line-height: 1;
+  letter-spacing: 0;
+  background: #ffffff;
+  text-align: justify;
+  overflow:hidden;
+  word-wrap:break-word;
+
+  @include respond(xs) {
+   color: #5a5a5a;
+   -webkit-text-size-adjust: 100%;
+   -webkit-font-smoothing: antialiased;
+ }
+
+ @include respond(md) {
+   color: #686868;
+ }
+
+ @include respond(pc) {
+   color: #515151;
+ }
+}
+
+*, :after, :before {
+  box-sizing: border-box;
+}
+
+
+/* common
+-----------------------------------*/
+
+img {
+
+  @include respond(xs) {
+    width: 100%;
+    max-width: 100%;
+  }
+
+  @include respond(md) {
+    width: 100%;
+    max-width: 100%;
+  }
+
+  @include respond(pc) {
+    box-shadow:#000 0 0 0;
+  }
+}
+
+a {
+  color: #000000;
+  text-decoration: none;
+
+  @include respond(pc) {
+    transition: opacity 0.5s;
+
+    img {
+      transition: opacity 0.5s;
+    }
+
+    &:hover {
+      opacity: 0.7;
+    }
+  }
+}
+
+.pc {
+  @include respond(xs) {
+    display: none !important;
+  }
+}
+
+.sp {
+  @include respond(pc) {
+    display: none !important;
+  }
+}
