@@ -13,10 +13,13 @@
     "gulp": "^3.9.1",
     "gulp-autoprefixer": "latest",
     "gulp-concat": "latest",
+    "gulp-filelog": "^0.4.1",
+    "gulp-imagemin": "^3.0.1",
     "gulp-plumber": "latest",
     "gulp-prettify": "latest",
     "gulp-rename": "latest",
     "gulp-ruby-sass": "0.7.0",
+    "gulp-sketch": "^1.0.3",
     "gulp-uglify": "latest",
     "gulp.spritesmith": "latest"
   }

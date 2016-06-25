@@ -11,7 +11,10 @@ var gulp         = require('gulp'),
     rename       = require('gulp-rename'),
     rubySass     = require('gulp-ruby-sass'),
     sprite       = require('gulp.spritesmith'),
-    uglify       = require('gulp-uglify')
+    uglify       = require('gulp-uglify'),
+    sketch      = require("gulp-sketch"),
+    imagemin    = require('gulp-imagemin'),
+     filelog     = require('gulp-filelog')
 ;
 
 /***************************************************************************
@@ -33,21 +36,13 @@ var paths = {
   'scssDest'  : 'src/scss',
   'scssFiles' : 'src/scss/**/*.scss',
 // css
-  'cssDest'   : './www/css'
+  'cssDest'   : './www/css',
+
+// scss
+  srcDir  : 'src/sketch',
+  dstDir : 'src/sketch/exports',
+
 }
-
-/***************************************************************************
-* browser-sync
-***************************************************************************/
-
-// Local server
-// gulp.task('browser-sync', function() {
-//      browserSync({
-//           proxy: paths.vhost,
-//           open: 'external'
-//      });
-// });
-
 // Static server
 gulp.task('browser-sync', function() {
   browserSync({
@@ -78,6 +73,28 @@ gulp.task('sprite', function() {
   spriteData.img.pipe(gulp.dest(paths.imgDest));
   spriteData.css.pipe(gulp.dest(paths.scssDest + '/module'));
 });
+
+
+
+gulp.task( 'sketchExport:slices', function(){
+  var srcGlob    = paths.srcDir + '/*.sketch';
+  var dstGlob    = paths.dstDir;
+
+  var sketchOptions = {
+    export     : 'slices'
+  };
+
+  var imageminOptions = {
+    optimizationLevel: 7
+  };
+
+  return gulp.src( srcGlob )
+    .pipe(sketch( sketchOptions ))
+    .pipe(imagemin( imageminOptions ))
+    .pipe(gulp.dest( dstGlob ))
+    .pipe(filelog());
+});
+
 
 
 /***************************************************************************
@@ -114,3 +131,6 @@ gulp.task('default', [
     'rubySass',
     'watch'
 ]);
+
+
+gulp.task( 'sketch', ['sketchExport:slices'] );
