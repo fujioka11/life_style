@@ -23,11 +23,11 @@ var gulp         = require('gulp'),
 
 var paths = {
   'dest'      : './',
-  'vhost'     : 'example.dev',
+  'vhost'     : 'vccw.dev',
   'port'      : 3000,
 // html
-  'htmlDest'  : './www',
-  'htmlFiles' : './*.html',
+  'htmlDest'  : './www/wordpress/wp-content/themes/xeory_base-child/',
+  'htmlFiles' : './*.php',
 // images
   'imgDest'   : 'img',
   'imgDir'    : 'src/img',
@@ -36,7 +36,7 @@ var paths = {
   'scssDest'  : 'src/scss',
   'scssFiles' : 'src/scss/**/*.scss',
 // css
-  'cssDest'   : './www/css',
+  'cssDest'   : './www/wordpress/wp-content/themes/xeory_base-child/',
 
 // scss
   srcDir  : 'src/sketch',
@@ -120,14 +120,14 @@ gulp.task('rubySass', function () {
 
 gulp.task('watch', function() {
   //gulp.watch([paths.imgDest + '/sprite/*.png'], ['sprite']);
-  gulp.watch([paths.htmlFiles], ['bs-reload']);
+  //gulp.watch([paths.htmlFiles], ['bs-reload']);
   /*gulp.watch([paths.jsDest], ['jsLib']);*/
   gulp.watch([paths.scssFiles], ['rubySass']);
 });
 
 gulp.task('default', [
-    'browser-sync',
-    'bs-reload',
+    //'browser-sync',
+    //'bs-reload',
     'rubySass',
     'watch'
 ]);
