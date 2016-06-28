@@ -26,8 +26,8 @@ var paths = {
   'vhost'     : 'vccw.dev',
   'port'      : 3000,
 // html
-  'htmlDest'  : './www/wordpress/wp-content/themes/xeory_base-child/',
-  'htmlFiles' : './*.php',
+  'htmlDest'  : './www',
+  'htmlFiles' : '*.html',
 // images
   'imgDest'   : 'img',
   'imgDir'    : 'src/img',
@@ -126,8 +126,8 @@ gulp.task('watch', function() {
 });
 
 gulp.task('default', [
-    //'browser-sync',
-    //'bs-reload',
+    'browser-sync',
+    'bs-reload',
     'rubySass',
     'watch'
 ]);
