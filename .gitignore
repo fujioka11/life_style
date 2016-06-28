@@ -24,3 +24,4 @@ www
 /var/www/vhosts/i-70b33683wp-content/wp-cache-config.php
 node_modules
 *.sketch
+.sass-cache

@@ -1,0 +1,87 @@
+/**/
+body{
+  font-family: -apple-system, ‘Helvetica Neue’, ‘Hiragino Kaku Gothic ProN’, ‘游ゴシック’, ‘メイリオ’, meiryo, sans-serif;
+  background: #fff!important;
+}
+
+/*レイアウト*/
+
+
+.main-inner {
+  @include respond(pc) {
+    margin-right:0px!important;
+  }
+}
+
+.post-loop-wrap{
+
+    @include respond(pc) {
+      @include cf();
+      width: 890px;
+    }
+
+
+    .new_entry{
+      @include respond(pc) {
+        border-bottom: 2px solid #ccc;
+        margin-bottom: 20px;
+      }
+    }
+
+    .first_post{
+      @include respond(pc) {
+      width: 420px!important;
+      float: left;
+      margin-right: 25px;
+      margin-bottom: 30px!important;
+    }
+  }
+
+  .second_post{
+    @include respond(pc) {
+      width:880px!important;
+      clear: left;
+      @include cf();
+    }
+
+    .post_thum{
+      @include respond(pc) {
+      width: 240px;
+      float: left;;
+    }
+    }
+  }
+
+  .post_thum {
+    a{
+      display: block;
+      text-align: center;
+    }
+  }
+
+  .title_txt {
+
+    @include respond(pc) {
+      margin-top: 1em;
+      font-size: 22px;
+    }
+
+    a{
+      color: $color;
+      font-weight: bold;
+    }
+  }
+  .article_info{
+      @include respond(pc) {
+        @include cf();
+        margin-top: 0.5em;
+        color: #868686;
+      }
+
+    li{
+      float: left;
+      margin-right: 0.5em;
+    }
+  }
+
+}
